@@ -39,7 +39,7 @@ def analizar_accion(ticker):
     enviar_mensaje(mensaje)
 
 acciones = ["AAPL", "TSLA", "MSFT"]
-enviar_mensaje("🚀 AxisPulse activo")
+enviar_mensaje("🚀 AxisPulse activo - prueba OK")
 while True:
     for accion in acciones:
         analizar_accion(accion)
