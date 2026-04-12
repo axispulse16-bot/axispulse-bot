@@ -10,11 +10,13 @@ CHAT_ID = os.getenv("CHAT_ID")
 
 def enviar_mensaje(texto):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-    data = {
+    params = {
         "chat_id": CHAT_ID,
         "text": texto
     }
-    requests.post(url, data=data)
+
+    response = requests.get(url, params=params)
+    print("Respuesta Telegram:", response.text)
 
 def analizar_accion(ticker):
     data = yf.download(ticker, period="1d", interval="5m")
@@ -39,7 +41,7 @@ def analizar_accion(ticker):
     enviar_mensaje(mensaje)
 
 acciones = ["AAPL", "TSLA", "MSFT"]
-enviar_mensaje("🚀 AxisPulse activo - prueba OK")
+enviar_mensaje("🚀 AxisPulse ya está funcionando")
 while True:
     for accion in acciones:
         analizar_accion(accion)
