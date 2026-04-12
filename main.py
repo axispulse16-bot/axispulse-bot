@@ -5,13 +5,13 @@ import time
 import os
 import requests
 
-TOKEN = os.getenv("8252991488:AAFPTelZU_uQOgMvjkA2RWfMyB0siWcWwkc")
-CHAT_ID = os.getenv("8626753364")
+TOKEN = os.getenv("TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
 def enviar_mensaje(texto):
-    url = f"https://api.telegram.org/bot{8252991488:AAFPTelZU_uQOgMvjkA2RWfMyB0siWcWwkc}/sendMessage"
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     data = {
-        "chat_id": 8626753364,
+        "chat_id": CHAT_ID,
         "text": texto
     }
     requests.post(url, data=data)
