@@ -5,10 +5,10 @@ import time
 import os
 from telegram import Bot
 
-TOKEN = os.getenv("TOKEN")
-CHAT_ID = os.getenv("CHAT_ID")
+TOKEN = os.getenv("8252991488:AAFPTelZU_uQOgMvjkA2RWfMyB0siWcWwkc")
+CHAT_ID = os.getenv("8626753364")
 
-bot = Bot(token=TOKEN)
+bot = Bot(token=8252991488:AAFPTelZU_uQOgMvjkA2RWfMyB0siWcWwkc)
 
 def analizar_accion(ticker):
     data = yf.download(ticker, period="1d", interval="5m")
