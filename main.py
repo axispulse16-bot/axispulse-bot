@@ -16,10 +16,11 @@ def analizar_accion(ticker):
     if data.empty:
         return
 
-    close_prices = data['Close'].squeeze()
-    rsi = RSIIndicator(close=close_prices, window=14).rsi()
-    ultimo_rsi = rsi.iloc[-1]
-    precio = data['Close'].iloc[-1]
+close_prices = data['Close'].squeeze()
+
+rsi = RSIIndicator(close=close_prices, window=14).rsi()
+ultimo_rsi = rsi.iloc[-1]
+precio = close_prices.iloc[-1]
 
     if ultimo_rsi < 30:
         señal = "🟢 COMPRAR"
