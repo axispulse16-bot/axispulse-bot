@@ -16,7 +16,8 @@ def analizar_accion(ticker):
     if data.empty:
         return
 
-    rsi = RSIIndicator(close=data['Close'], window=14).rsi()
+    close_prices = data['Close'].squeeze()
+    rsi = RSIIndicator(close=close_prices, window=14).rsi()
     ultimo_rsi = rsi.iloc[-1]
     precio = data['Close'].iloc[-1]
 
