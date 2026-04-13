@@ -1,3 +1,4 @@
+STOP
 import yfinance as yf
 import pandas as pd
 from ta.momentum import RSIIndicator
